@@ -49,6 +49,7 @@ function RootLayoutNav() {
       <Stack>
         <Stack.Screen name="index" options={{ title: "Series" }} />
         <Stack.Screen name="modal" options={{ presentation: "modal" }} />
+        <Stack.Screen name="episode-details" options={{ title: "" }} />
       </Stack>
     </ThemeProvider>
   );

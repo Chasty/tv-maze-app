@@ -8,4 +8,5 @@ export type Episode = {
   image: {
     original: string;
   };
+  summary: string;
 };

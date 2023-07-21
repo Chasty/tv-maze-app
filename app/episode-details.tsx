@@ -8,11 +8,6 @@ const EpisodeDetailsScrenn = () => {
   const episode = params?.data ? JSON.parse(params?.data) : null;
   return (
     <View>
-      <Stack.Screen
-        options={{
-          title: `episode ${episode.number}`,
-        }}
-      />
       <EpisodeDetailts {...episode} />
     </View>
   );

@@ -14,7 +14,7 @@ const blurhash =
 
 const { width: WIDTH } = Dimensions.get("window");
 
-const HALF_WIDTH = (WIDTH - 48) / 2;
+const HALF_WIDTH = (WIDTH - 52) / 2;
 
 export type EpisodeProps = {
   id: number;
@@ -22,6 +22,7 @@ export type EpisodeProps = {
   season: number;
   number: number;
   score: number;
+  summary: string;
   urlImage?: string;
 };
 
@@ -41,7 +42,7 @@ const Episode = (episode: EpisodeProps) => {
         style={styles.image}
         source={episode.urlImage}
         placeholder={blurhash}
-        contentFit="fill"
+        contentFit="cover"
         transition={1000}
       />
     </Pressable>
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
   container: {
     width: HALF_WIDTH,
     height: 200,
-    marginRight: 4,
+    marginRight: 6,
     marginTop: 16,
   },
   text: {
