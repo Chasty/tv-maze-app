@@ -9,6 +9,7 @@ type GenresProps = {
 };
 
 const Genres = ({ genres }: GenresProps) => {
+  if (!genres) return null;
   return (
     <View style={styles.container}>
       {genres.map((genre, index) => (

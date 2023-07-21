@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Stack, useSearchParams } from "expo-router";
 import { ScrollView } from "react-native-gesture-handler";
 import { SerieDetails } from "@/components/SerieDetails";
-import {  useSeasons } from "@/hooks/useSeasons";
+import { useSeasons } from "@/hooks/useSeasons";
 
 const DetailScreen = () => {
   const params = useSearchParams();
   const serie = params?.data ? JSON.parse(params?.data) : null;
-  const { seasons }  = useSeasons(params?.id)
+  const { seasons } = useSeasons(params?.id);
 
   return (
     <ScrollView>

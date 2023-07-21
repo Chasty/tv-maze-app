@@ -4,9 +4,8 @@ import Series from "@/components/Series";
 import Searchbar from "@/components/Searchbar";
 import { useSeries } from "@/hooks/useSeries";
 
-
 const HomeScreen = () => {
-  const { search, onChangeText, series  } = useSeries()
+  const { search, onChangeText, series } = useSeries();
 
   return (
     <ScrollView contentContainerStyle={{ paddingBottom: 16 }}>

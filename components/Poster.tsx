@@ -1,5 +1,9 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image as RNImage, StyleSheet } from "react-native";
+import { Image } from "expo-image";
 import React from "react";
+
+const blurhash =
+  "|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[";
 
 type PosterProps = {
   url?: string;
@@ -8,11 +12,19 @@ type PosterProps = {
 const Poster = ({ url }: PosterProps) => {
   return (
     <View style={styles.container}>
-      <Image
+      {/*<Image
         style={styles.image}
         source={
           url ? { uri: url } : require("../assets/images/no-image-available.png")
         }
+      />*/}
+
+      <Image
+        style={styles.image}
+        source={url}
+        placeholder={blurhash}
+        contentFit="fill"
+        transition={1000}
       />
     </View>
   );
@@ -22,12 +34,12 @@ export default Poster;
 
 const styles = StyleSheet.create({
   container: {
-    height: 300,
-    width: '100%'
+    height: 340,
+    width: "100%",
   },
   image: {
     flex: 1,
     width: undefined,
-    height: undefined
+    height: undefined,
   },
 });
