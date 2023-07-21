@@ -1,4 +1,4 @@
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet } from "react-native";
 import React from "react";
 import { Serie, SerieProps } from "./Serie";
 import { View } from "./Themed";
@@ -21,7 +21,5 @@ export default Series;
 
 const styles = StyleSheet.create({
   container: {
-    //backgroundColor: 'blue',
-    //paddingHorizontal: 16
   },
 });

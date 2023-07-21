@@ -1,8 +1,11 @@
-import { Pressable } from "react-native";
+import Days from "./Days";
+import Genres from "./Genres";
 import Poster from "./Poster";
 import SerieName from "./SerieName";
-import { useRouter } from "expo-router";
+import Summary from "./Summary";
+import Seasons from "./Seasons";
 import { SeasonProps } from "./Season";
+import { View } from "./Themed";
 
 export type SerieProps = {
   id: string;
@@ -14,27 +17,29 @@ export type SerieProps = {
     days: Array<string>;
   };
   genres: Array<string>;
-  withDetails?: boolean;
   seasons: Array<SeasonProps>;
 };
 
-export const Serie = (props: SerieProps) => {
+export const SerieDetails = (props: SerieProps) => {
   const {
     id,
     name,
+    summary,
     urlImage,
+    schedule,
+    genres,
+    seasons,
   } = props;
-  const router = useRouter();
   return (
-    <Pressable
-      onPress={() => {
-        router.push(`/${id}`);
-        router.setParams({ data: JSON.stringify(props) });
-      }}
+    <View
       style={{ margin: 20 }}
     >
       <Poster url={urlImage} />
       <SerieName name={name} />
-    </Pressable>
+      <Summary text={summary} />
+      <Days schedule={schedule} />
+      <Genres genres={genres} />
+      <Seasons seasons={seasons} />
+    </View>
   );
 };

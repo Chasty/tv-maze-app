@@ -14,8 +14,8 @@ const Days = ({ schedule }: DaysProps) => {
     return (
         <View>
             <Text>{time}</Text>
-            {days.map((day) => (
-                <Text>{day}</Text>
+            {days.map((day, index) => (
+                <Text key={index}>{day}</Text>
             ))}
         </View>
     )
