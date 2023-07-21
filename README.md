@@ -23,7 +23,10 @@
 
 https://github.com/Chasty/tv-maze-app/assets/18494040/2575a574-5251-4c85-b7e7-4fc2abe2a81a
 
-
+## 💻 Tech Stack
+  - React Native
+  - Expo Router V2
+  - Expo Image
 
 ## 🧭 Navigation Structure
 
