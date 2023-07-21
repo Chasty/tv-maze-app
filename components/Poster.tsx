@@ -12,13 +12,6 @@ type PosterProps = {
 const Poster = ({ url }: PosterProps) => {
   return (
     <View style={styles.container}>
-      {/*<Image
-        style={styles.image}
-        source={
-          url ? { uri: url } : require("../assets/images/no-image-available.png")
-        }
-      />*/}
-
       <Image
         style={styles.image}
         source={url}

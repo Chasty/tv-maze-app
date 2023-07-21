@@ -31,15 +31,15 @@ export const SerieDetails = (props: SerieProps) => {
     seasons,
   } = props;
   return (
-    <View
-      style={{ margin: 20 }}
-    >
+    <View>
       <Poster url={urlImage} />
-      <SerieName name={name} />
-      <Summary text={summary} />
-      <Days schedule={schedule} />
-      <Genres genres={genres} />
-      <Seasons seasons={seasons} />
+      <View style={{ marginHorizontal: 20 }}>
+        <SerieName name={name} />
+        <Summary text={summary} />
+        <Days schedule={schedule} />
+        <Genres genres={genres} />
+        <Seasons seasons={seasons} />
+      </View>
     </View>
   );
 };
