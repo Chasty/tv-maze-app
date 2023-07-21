@@ -8,10 +8,9 @@ type SeriesProps = {
 };
 
 const Series = ({ series }: SeriesProps) => {
-
-  const renderItem = ({ item }: { item : SerieProps }) => {
-    return <Serie {...item} />
-  }
+  const renderItem = ({ item }: { item: SerieProps }) => {
+    return <Serie {...item} />;
+  };
 
   return (
     <View style={styles.container}>
@@ -21,7 +20,7 @@ const Series = ({ series }: SeriesProps) => {
         }}
         data={series}
         renderItem={renderItem}
-        keyExtractor={(prop) => prop.id}
+        keyExtractor={(prop, index) => `${prop.id}$-{index}`}
       />
     </View>
   );

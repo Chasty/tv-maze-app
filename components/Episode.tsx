@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Text,
   View,
+  Platform,
 } from "react-native";
 import React from "react";
 import { router } from "expo-router";
@@ -38,13 +39,17 @@ const Episode = (episode: EpisodeProps) => {
       <Text style={styles.text} numberOfLines={1}>
         {episode.name}
       </Text>
-      <Image
-        style={styles.image}
-        source={episode.urlImage}
-        placeholder={blurhash}
-        contentFit="cover"
-        transition={1000}
-      />
+      {Platform.OS === "ios" ? (
+        <Image
+          style={styles.image}
+          source={episode.urlImage}
+          placeholder={blurhash}
+          contentFit="cover"
+          transition={1000}
+        />
+      ) : (
+        <RNImage style={styles.image} source={{ uri: episode.urlImage }} />
+      )}
     </Pressable>
   );
 };

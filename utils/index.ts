@@ -55,3 +55,7 @@ export const groupEpisodesBySeason = (
 
   return result;
 };
+
+export function htmlEntities(str: string) {
+  return String(str).replace(/%/, "").replace(/#/, "").replace(/&/g, "&amp;");
+}

@@ -3,6 +3,7 @@ import Poster from "./Poster";
 import SerieName from "./SerieName";
 import { useRouter } from "expo-router";
 import { SeasonProps } from "./Season";
+import { htmlEntities } from "@/utils";
 
 export type SerieProps = {
   id: string;
@@ -19,17 +20,18 @@ export type SerieProps = {
 };
 
 export const Serie = (props: SerieProps) => {
-  const {
-    id,
-    name,
-    urlImage,
-  } = props;
+  const { id, name, urlImage } = props;
   const router = useRouter();
   return (
     <Pressable
       onPress={() => {
         router.push(`/${id}`);
-        router.setParams({ data: JSON.stringify(props) });
+        router.setParams({
+          data: JSON.stringify({
+            ...props,
+            summary: htmlEntities(props.summary),
+          }),
+        });
       }}
       style={{ margin: 20 }}
     >

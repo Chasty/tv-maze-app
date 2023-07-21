@@ -10,7 +10,7 @@ const DetailScreen = () => {
   const { seasons } = useSeasons(params?.id);
 
   return (
-    <ScrollView>
+    <ScrollView contentContainerStyle={{ paddingBottom: 20 }}>
       <Stack.Screen
         options={{
           title: serie.name,

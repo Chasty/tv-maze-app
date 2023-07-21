@@ -1,4 +1,10 @@
-import { View, Text, Image as RNImage, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  Image as RNImage,
+  StyleSheet,
+  Platform,
+} from "react-native";
 import { Image } from "expo-image";
 import React from "react";
 
@@ -12,13 +18,24 @@ type PosterProps = {
 const Poster = ({ url }: PosterProps) => {
   return (
     <View style={styles.container}>
-      <Image
-        style={styles.image}
-        source={url}
-        placeholder={blurhash}
-        contentFit="fill"
-        transition={1000}
-      />
+      {Platform.OS === "ios" ? (
+        <Image
+          style={styles.image}
+          source={url}
+          placeholder={blurhash}
+          contentFit="fill"
+          transition={1000}
+        />
+      ) : (
+        <RNImage
+          style={styles.image}
+          source={
+            url
+              ? { uri: url }
+              : require("../assets/images/no-image-available.png")
+          }
+        />
+      )}
     </View>
   );
 };

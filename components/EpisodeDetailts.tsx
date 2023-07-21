@@ -1,4 +1,10 @@
-import { StyleSheet, Text, View } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image as RNImage,
+  Platform,
+} from "react-native";
 import React from "react";
 import { router } from "expo-router";
 import { EpisodeProps } from "./Episode";
@@ -15,11 +21,16 @@ const EpisodeDetailts = (episode: EpisodeProps) => {
       <Text>
         Season {episode.season} - Episode {episode.number}
       </Text>
-      <Image
-        placeholder={blurhash}
-        style={styles.image}
-        source={{ uri: episode.urlImage }}
-      />
+      {Platform.OS === "ios" ? (
+        <Image
+          placeholder={blurhash}
+          style={styles.image}
+          source={{ uri: episode.urlImage }}
+        />
+      ) : (
+        <RNImage style={styles.image} source={{ uri: episode.urlImage }} />
+      )}
+
       <Summary text={episode.summary} />
     </View>
   );
@@ -40,6 +51,6 @@ const styles = StyleSheet.create({
     width: "100%",
     aspectRatio: 16 / 9,
     marginVertical: 10,
-    backgroundColor: "red",
+    backgroundColor: "#666",
   },
 });
