@@ -20,6 +20,11 @@
 ## 📱 Preview
 
 
+
+https://github.com/Chasty/tv-maze-app/assets/18494040/2575a574-5251-4c85-b7e7-4fc2abe2a81a
+
+
+
 ## 🧭 Navigation Structure
 
 ```bash title="File System"
