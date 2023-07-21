@@ -21,7 +21,9 @@
 
 
 
-https://github.com/Chasty/tv-maze-app/assets/18494040/2575a574-5251-4c85-b7e7-4fc2abe2a81a
+https://github.com/Chasty/tv-maze-app/assets/18494040/3a16ea4f-8c03-4d20-a6e7-414ec6c37d9c
+
+
 
 ## 💻 Tech Stack
   - React Native
