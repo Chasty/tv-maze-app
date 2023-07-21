@@ -12,8 +12,8 @@ const Summary = ({ text }: SummaryProps) => {
     return (
         <MonoText>
             <RenderHtml
-              contentWidth={width}
-              source={{ html: text }}
+                contentWidth={width}
+                source={{ html: text ?? 'No summary available' }}
             />
         </MonoText>
     )

@@ -1,6 +1,6 @@
 import {  StyleSheet } from 'react-native'
 import React from 'react'
-import { MonoText } from './StyledText'
+import { Text } from './Themed'
 
 type SerieNameProps = {
     name: string
@@ -8,9 +8,9 @@ type SerieNameProps = {
 
 const SerieName = ({ name }: SerieNameProps) => {
     return (
-        <MonoText style={styles.container}>
+        <Text style={styles.container}>
                 {name}
-        </MonoText>
+        </Text>
     )
 }
 
@@ -18,6 +18,9 @@ export default SerieName
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 8
+        marginTop: 8,
+        fontWeight: '900',
+        fontSize: 18,
+        letterSpacing: 4
     }
   })

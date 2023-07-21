@@ -7,20 +7,27 @@ type PosterProps = {
 
 const Poster = ({ url }: PosterProps) => {
   return (
-    <Image
-      style={styles.image}
-      source={
-        url ? { uri: url } : require("../assets/images/no-image-available.png")
-      }
-    />
+    <View style={styles.container}>
+      <Image
+        style={styles.image}
+        source={
+          url ? { uri: url } : require("../assets/images/no-image-available.png")
+        }
+      />
+    </View>
   );
 };
 
 export default Poster;
 
 const styles = StyleSheet.create({
-  image: {
-    width: "100%",
+  container: {
     height: 300,
+    width: '100%'
+  },
+  image: {
+    flex: 1,
+    width: undefined,
+    height: undefined
   },
 });

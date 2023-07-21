@@ -8,15 +8,19 @@ type SeasonsProps = {
 
 const Seasons = ({ seasons }: SeasonsProps) => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text style={{ fontWeight: "bold" }}>Seasons</Text>
-      {seasons.map((season) => (
-        <Season key={season.season} {...season} />
-      ))}
+        {seasons.map((season) => (
+          <Season key={season.season} {...season} />
+        ))}
     </View>
   );
 };
 
 export default Seasons;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 8
+  }
+});
