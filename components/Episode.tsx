@@ -39,17 +39,13 @@ const Episode = (episode: EpisodeProps) => {
       <Text style={styles.text} numberOfLines={1}>
         {episode.name}
       </Text>
-      {Platform.OS === "ios" ? (
-        <Image
+      <Image
           style={styles.image}
           source={episode.urlImage}
           placeholder={blurhash}
           contentFit="cover"
           transition={1000}
-        />
-      ) : (
-        <RNImage style={styles.image} source={{ uri: episode.urlImage }} />
-      )}
+      />
     </Pressable>
   );
 };

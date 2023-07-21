@@ -21,16 +21,11 @@ const EpisodeDetailts = (episode: EpisodeProps) => {
       <Text>
         Season {episode.season} - Episode {episode.number}
       </Text>
-      {Platform.OS === "ios" ? (
-        <Image
-          placeholder={blurhash}
-          style={styles.image}
-          source={{ uri: episode.urlImage }}
-        />
-      ) : (
-        <RNImage style={styles.image} source={{ uri: episode.urlImage }} />
-      )}
-
+      <Image
+        placeholder={blurhash}
+        style={styles.image}
+        source={{ uri: episode.urlImage }}
+      />
       <Summary text={episode.summary} />
     </View>
   );

@@ -18,24 +18,13 @@ type PosterProps = {
 const Poster = ({ url }: PosterProps) => {
   return (
     <View style={styles.container}>
-      {Platform.OS === "ios" ? (
-        <Image
+      <Image
           style={styles.image}
           source={url}
           placeholder={blurhash}
           contentFit="fill"
           transition={1000}
         />
-      ) : (
-        <RNImage
-          style={styles.image}
-          source={
-            url
-              ? { uri: url }
-              : require("../assets/images/no-image-available.png")
-          }
-        />
-      )}
     </View>
   );
 };

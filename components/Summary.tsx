@@ -10,12 +10,10 @@ type SummaryProps = {
 const Summary = ({ text }: SummaryProps) => {
     const { width } = useWindowDimensions();
     return (
-        <MonoText>
-            <RenderHtml
-                contentWidth={width}
-                source={{ html: text ?? 'No summary available' }}
-            />
-        </MonoText>
+        <RenderHtml
+            contentWidth={width}
+            source={{ html: text ?? 'No summary available' }}
+        />
     )
 }
 
