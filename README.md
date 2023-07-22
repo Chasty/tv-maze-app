@@ -14,8 +14,8 @@
 ## 🏃‍♀️ Running the app
 
   - `yarn start`
-  - `Tap a if you want to run the app on android`
-  - `Tap i if you want to run the app on ios`
+  - `Press a if you want to run the app on android`
+  - `Press i if you want to run the app on ios`
 
 ## 📱 Preview
 
